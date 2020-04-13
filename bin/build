@@ -18,6 +18,7 @@ const defaultValue = (value, defaultValue) =>
   (typeof value === 'boolean' ? true : value) ? value : defaultValue;
 
 const projectDir = (...args) => path.resolve(__dirname, '..', ...args);
+const srcDir = (...args) => projectDir('src', ...args);
 
 const fileExists = async (path) => {
   try {
@@ -97,7 +98,6 @@ const join = async () => {
   const configBuffer = await fs.readFile(jsonPath);
   const config = JSON.parse(configBuffer.toString('utf8'));
 
-  const srcDir = (...args) => projectDir('src', ...args);
   const srcFiles = await fs.readdir(srcDir());
 
   const globalScriptPath = srcDir(GLOBAL_LUA_FILE);
@@ -142,15 +142,13 @@ const join = async () => {
     })
   );
 
-  const configJSON = JSON.stringify(config, null, 4);
+  const configJSON = JSON.stringify(config, null, 2);
   await fs.writeFile(jsonPath, configJSON, 'utf8');
 };
 
 const split = async (jsonPath) => {
   const configBuffer = await fs.readFile(jsonPath);
   const config = JSON.parse(configBuffer.toString('utf8'));
-
-  const srcDir = (...args) => projectDir('src', ...args);
 
   if (config.LuaScript) {
     await fs.writeFile(srcDir(GLOBAL_LUA_FILE), config.LuaScript);
@@ -179,7 +177,7 @@ const split = async (jsonPath) => {
       ...entry,
       LuaScript: '',
     }));
-    const configJSON = JSON.stringify(config, null, 4);
+    const configJSON = JSON.stringify(config, null, 2);
     await fs.writeFile(jsonPath, configJSON);
     logger.info('Successfully removed LuaScript entries');
   } else {
@@ -188,6 +186,9 @@ const split = async (jsonPath) => {
 };
 
 const pack = async (output) => {
+  const inputJSONPath = projectDir('dist/Mods/Workshop/CIA-collect-it-all.json')
+  const inputJSON = await fs.readFile(inputJSONPath)
+
   logger.group('Pack');
   logger.group('Scripts');
   logger.info('Adding .ttslua scripts to JSON...');
@@ -207,6 +208,8 @@ const pack = async (output) => {
   logger.info('Archive completed successfully');
   logger.groupEnd();
 
+  fs.writeFile(inputJSONPath, inputJSON)
+
   logger.group('TTSMod');
   logger.info('Writing .ttsmod file...');
   await fs.rename(projectDir('dist', outputZipPath), output);
@@ -225,6 +228,12 @@ const unpack = async (input) => {
   logger.info(zipStdout);
   logger.info(`Unpacked successfully to '${unzipOutputDir}`);
   logger.groupEnd();
+
+  try {
+    await fs.mkdir(path);
+  } catch (e) {
+    logger.info(`Path '${path}' already exists`);
+  }
 
   logger.group('Scripts');
   logger.info('Extracting .ttslua files from JSON...');

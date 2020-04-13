@@ -1,0 +1,241 @@
+cards = {
+    ['North Korea Nuclear Talks'] = {
+        icons = {'political', 'military', 'weapons'},
+        difficulty = 7,
+        points = 3,
+    },
+    ['Russia Election Interference'] = {
+        icons = {'political', 'economic'},
+        difficulty = 6,
+        points = 3,
+    },
+    ['Pakistan Nuclear Security'] = {
+        icons = {'military', 'weapons'},
+        difficulty = 9,
+        points = 3,
+    },
+    ['China Counterspace Capabilities'] = {
+        icons = { 'military', 'weapons'},
+        difficulty = 6,
+        points = 3,
+    },
+    ['ISIS Leadership'] = {
+        icons = {'political', 'military'},
+        difficulty = 9,
+        points = 3,
+    },
+    ['Taliban Resurgence'] = {
+        icons = {'political', 'military', 'economic'},
+        difficulty = 7,
+        points = 3,
+    },
+    ['China Sonic Weaponry'] = {
+        icons = {'political', 'weapons'},
+        difficulty = 8,
+        points = 2,
+    },
+    ['Caspian Energy Crisis'] = {
+        icons = {'political', 'military', 'economic'},
+        difficulty = 6,
+        points = 2,
+    },
+    ['Al-Shabaab Attacks in Kenya'] = {
+        icons = {'political', 'military'},
+        difficulty = 5,
+        points = 2,
+    },
+    ['Zimbabwe Unrest'] = {
+        icons = {'political', 'military'},
+        difficulty = 5,
+        points = 1,
+    },
+
+    ['Iran Missile Testing'] = {
+        icons = {'military', 'weapons'},
+        difficulty = 7,
+        points = 3,
+    },
+    ['China Missile Testing'] = {
+        icons = {'military', 'weapons'},
+        difficulty = 7,
+        points = 3,
+    },
+    ['Iran Chemical Weapon Program'] = {
+        icons = {'military', 'weapons'},
+        difficulty = 4,
+        points = 3,
+    },
+    ['Afghanistan Opium Network'] = {
+        icons = {'political', 'military', 'economic'},
+        difficulty = 7,
+        points = 2,
+    },
+    ['Iraq Instability'] = {
+        icons = {'political', 'military'},
+        difficulty = 8,
+        points = 2,
+    },
+    ['Israel Palestinian Conflict'] = {
+        icons = {'political', 'military', 'economic'},
+        difficulty = 6,
+        points = 2,
+    },
+    ['UAE Reform Crackdown'] = {
+        icons = {'political', 'military'},
+        difficulty = 5,
+        points = 2,
+    },
+    ['Chemical Weapon Assassination'] = {
+        icons = {'military', 'weapons'},
+        difficulty = 5,
+        points = 2,
+    },
+    ['Hezbollah Weapon Acquisition'] = {
+        icons = {'military', 'economic'},
+        difficulty = 6,
+        points = 2,
+    },
+    ['Syria Chemical Weapons Testing'] = {
+        icons = {'military', 'weapons'},
+        difficulty = 8,
+        points = 1,
+    },
+    
+    ['Syria Political Unrest'] = {
+        icons = {'political', 'military'},
+        difficulty = 5,
+        points = 3,
+    },
+    ['Russia Intelligence Activities'] = {
+        icons = {'political', 'military'},
+        difficulty = 8,
+        points = 3,
+    },
+    ['China Cyber Warfare'] = {
+        icons = {'political', 'economic'},
+        difficulty = 8,
+        points = 3,
+    },
+    ['Russia Ukraine Conflict'] = {
+        icons = {'political', 'military'},
+        difficulty = 6,
+        points = 2,
+    },
+    ['India Missile Program'] = {
+        icons = {'military', 'weapons'},
+        difficulty = 7,
+        points = 2,
+    },
+    ['Russia Nuclear Delivery Submarine Drone'] = {
+        icons = {'military', 'weapons'},
+        difficulty = 8,
+        points = 2,
+    },
+    ['Russia Nuclear Weapon Design'] = {
+        icons = {'military', 'weapons'},
+        difficulty = 9,
+        points = 2,
+    },
+    ['Kurd Activism in Turkey'] = {
+        icons = {'political', 'economic'},
+        difficulty = 4,
+        points = 2,
+    },
+    ['Russia Defense Reform'] = {
+        icons = {'political', 'military', 'weapons'},
+        difficulty = 7,
+        points = 2,
+    },
+    ['Europe Refugee Crisis'] = {
+        icons = {'political', 'economic'},
+        difficulty = 4,
+        points = 1,
+    },
+    
+    ['Egypt Islamist Political Parties'] = {
+        icons = {'political'},
+        difficulty = 4,
+        points = 2,
+    },
+    ['Russia Military Sales'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+        difficulty = 7,
+        points = 2,
+    },
+    ['Venezuela Foreign Policy'] = {
+        icons = {'political', 'economic'},
+        difficulty = 6,
+        points = 2,
+    },
+    ['Piracy in the Straits of Malacca'] = {
+        icons = {'political', 'economic'},
+        difficulty = 4,
+        points = 1,
+    },
+    ['Iraq Oil Infrastructure'] = {
+        icons = {'military', 'economic'},
+        difficulty = 5,
+        points = 1,
+    },
+    ['China Blockchain Program'] = {
+        icons = {'political', 'economic'},
+        difficulty = 5,
+        points = 1,
+    },
+    ['G-7 Summit'] = {
+        icons = {'political', 'economic'},
+        difficulty = 4,
+        points = 1,
+    },
+    ['Europe Crime and Corruption'] = {
+        icons = {'political', 'economic'},
+        difficulty = 6,
+        points = 1,
+    },
+    ['Global Warming Summit'] = {
+        icons = {'political', 'economic'},
+        difficulty = 3,
+        points = 1,
+    },
+    ['Atrocities in Darfur'] = {
+        icons = {'political', 'military'},
+        difficulty = 5,
+        points = 1,
+    },
+    
+    ['Bolivia Economic Reform'] = {
+        icons = {'political', 'economic'},
+        difficulty = 4,
+        points = 1,
+    },
+    ['China Taiwan Posturing'] = {
+        icons = {'political', 'military'},
+        difficulty = 5,
+        points = 1,
+    },
+    ['Weaponized UAV Proliferation'] = {
+        icons = {'military', 'economic', 'weapons'},
+        difficulty = 7,
+        points = 1,
+    },
+    ['China Counter-Intelligence Purge'] = {
+        icons = {'political', 'military'},
+        difficulty = 3,
+        points = 1,
+    },
+    ['Nicaragua Revolution'] = {
+        icons = {'political'},
+        difficulty = 4,
+        points = 1,
+    },
+    ['China Yuan Revaluation'] = {
+        icons = {'political', 'economic'},
+        difficulty = 5,
+        points = 1,
+    }
+}
+
+function onLoad()
+    Global.setTable('crisisCards', cards)
+    Global.setVar('crisisDeck', self)
+end

@@ -1,0 +1,61 @@
+--[[ Lua code. See documentation: https://api.tabletopsimulator.com/ --]]
+
+crisisDeck = nil
+crisisCards = nil
+techniqueDeck = nil 
+techniqueCards = nil
+realityCheckDeck = nil
+collectionDeckTrigger = nil
+
+
+CRISIS_ASPECTS = {
+    MILITARY = {
+        name = "Military",
+        icon = "https://vignette.wikia.nocookie.net/meme/images/d/d0/Trolol2.png/revision/latest/scale-to-width-down/185?cb=20181102142005",
+    },
+    POLITICAL = {
+        name = "Political",
+        icon = "https://vignette.wikia.nocookie.net/meme/images/1/1e/6FbyRC4u.png/revision/latest/scale-to-width-down/185?cb=20181102135746",
+    },
+    ECONOMIC = {
+        name = "Economic",
+        icon = "https://vignette.wikia.nocookie.net/meme/images/6/66/JoW88EU0.png/revision/latest/scale-to-width-down/185?cb=20181102141417",
+    },
+    WEAPONS = {
+        name = "Weapons",  
+        icon = "https://t09.deviantart.net/ju0dgmwIS16XNTsHHodQCptLCi0=/fit-in/150x150/filters:no_upscale():origin()/pre05/0a84/th/pre/f/2011/128/5/4/trollface_colored_by_fuerawebadas-d3fwi18.png",
+    },
+}
+
+--[[ The onLoad event is called after the game save finishes loading. --]]
+function onLoad()
+    broadcastToAll('Loading...')
+    Wait.condition(
+        || broadcastToAll('Ready!'),
+        || 
+            crisisDeck ~= nil and
+            techniqueDeck ~= nil and
+            realityCheckDeck ~= nil and
+            collectionDeckTrigger ~= nil
+    )
+end
+
+--[[ The onUpdate event is called once per frame. --]]
+function onUpdate()
+    --[[ print('onUpdate loop!') --]]
+end
+
+function setup()
+    broadcastToAll('Starting setup...')
+
+    local position = collectionDeckTrigger.getPosition()
+    -- log(position)
+    local techniqueDeckClone = techniqueDeck.clone(position)
+    -- local realityCheckDeckClone = realityCheckDeck.clone(position, true)
+
+    -- techniqueDeckClone.setPositionSmooth()
+    -- realityCheckDeckClone.setPositionSmooth(collectionDeckTrigger.getPosition())
+
+    -- local collectionDeck = collectionDeckTrigger.getObjects()
+    -- print(collectionDeck[1])
+end

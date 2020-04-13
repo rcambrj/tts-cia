@@ -1,0 +1,141 @@
+
+cards = {
+    ['Think Outside the Box'] = {
+        support = true,
+    },
+    ['Good Justification'] = {
+        support = true,
+    },
+    ['Soft Target'] = {
+        support = true,
+    },
+    ['Compartmented'] = {
+        support = false,
+    },
+    ['Satellite Warning'] = {
+        support = false,
+    },
+    ['Think Outside the Box'] = {
+        support = true,
+    },
+    ['Leverage Personal Relationship'] = {
+        support = true,
+    },
+    ['Soft Target'] = {
+        support = true,
+    },
+    ['Denial and Deception'] = {
+        support = false,
+    },
+    ['Satellite Failure'] = {
+        support = false,
+    },
+    
+    ['Think Outside the Box'] = {
+        support = true,
+    },
+    ['Provide Feedback'] = {
+        support = true,
+    },
+    ['Really Soft Target'] = {
+        support = true,
+    },
+    ['No Exploitation Resources'] = {
+        support = false,
+    },
+    ['Ground Station Failure'] = {
+        support = false,
+    },
+    ['Rotation to a Collector'] = {
+        support = true,
+    },
+    ['Update Intelligence Requirements'] = {
+        support = true,
+    },
+    ['Competition'] = {
+        support = false,
+    },
+    ['Corrupt Signature Database'] = {
+        support = false,
+    },
+    ['Think Outside the Box'] = {
+        support = true,
+    },
+    
+    ['Coordinate Requirements Across IC'] = {
+        support = true,
+    },
+    ['Red Tape'] = {
+        support = false,
+    },
+    ['Encryption'] = {
+        support = false,
+    },
+    ['Think Outside the Box'] = {
+        support = true,
+    },
+    ['Working Group Meetings'] = {
+        support = true,
+    },
+    ['Internal Politics'] = {
+        support = false,
+    },
+    ['Linguistics Reassigned'] = {
+        support = false,
+    },
+    ['Aggressive Counter-Intel'] = {
+        support = false,
+    },
+    ['Think Outside the Box'] = {
+        support = true,
+    },
+    ['Provide Targeting Help'] = {
+        support = true,
+    },
+    
+    ['Hard Target'] = {
+        support = false,
+    },
+    ['Disinformation Campaign'] = {
+        support = false,
+    },
+    ['Persona Non Grata'] = {
+        support = false,
+    },
+    ['Think Outside the Box'] = {
+        support = true,
+    },
+    ['Provide Funding to a Collector'] = {
+        support = true,
+    },
+    ['Hard Target'] = {
+        support = false,
+    },
+    ['Customer Bias'] = {
+        support = false,
+    },
+    ['Misinformed'] = {
+        support = false,
+    },
+    ['Think Outside the Box'] = {
+        support = true,
+    },
+    ['Support from IC Leadership'] = {
+        support = true,
+    },
+    
+    ['Really Hard Target'] = {
+        support = false,
+    },
+    ['Media Blackout'] = {
+        support = false,
+    },
+    ['Bad Weather'] = {
+        support = false,
+    },
+}
+
+function onLoad()
+    Global.setTable('realityCheckCards', cards)
+    Global.setVar('realityCheckDeck', self)
+end

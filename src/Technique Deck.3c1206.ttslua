@@ -1,0 +1,211 @@
+cards = {
+    ['Overhead Fisint'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Voice Interception'] = {
+        icons = {'political', 'military', 'weapons'},
+    },
+    ['Darknet Databases'] = {
+        icons = {'political', 'military', 'economic'},
+    },
+    ['Materials Exploitation'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Homeland Security Fusion'] = {
+        icons = {'political', 'weapons'},
+    },
+    ['Agent-in-Place'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Visible Remote Sensing'] = {
+        icons = {'military', 'economic', 'weapons'},
+    },
+    ['Infrared Remote Sensing'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Signaling Channel Interception'] = {
+        icons = {'political', 'military', 'weapons'},
+    },
+    ['DNS Hijacking'] = {
+        icons = {'military', 'weapons'},
+    },
+    
+    ['Commercial Databases'] = {
+        icons = {'political', 'economic'},
+    },
+    ['IRINT'] = {
+        icons = {'weapons'},
+    },
+    ['Leadership Debriefing'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Refugee Debriefing'] = {
+        icons = {'political', 'economic'},
+    },
+    ['Listening Post'] = {
+        icons = {'political', 'military'},
+    },
+    ['Commit Mapping'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Contract Open Source Exploitation'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Airborne Missile Tracking'] = {
+        icons = {'weapons'},
+    },
+    ['Legal Attache Offices'] = {
+        icons = {'political'},
+    },
+    ['Technical Conference Speaker'] = {
+        icons = {'political', 'weapons'},
+    },
+    
+    ['Lidar Remote Sensing'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Airborne Imagery'] = {
+        icons = {'military'},
+    },
+    ['Spear Phishing'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Computer Network Exploitation'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Foreign Media Transcription'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Multi-Region Signature Library'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Non-Title 50 Agencies'] = {
+        icons = {'political', 'economic'},
+    },
+    ['Defense Attache Offices'] = {
+        icons = {'political', 'military', 'weapons'},
+    },
+    ['Time-History Analysis'] = {
+        icons = {'military', 'economic', 'weapons'},
+    },
+    ['INSAR'] = {
+        icons = {'military', 'weapons'},
+    },
+    
+    ['Tactical Military SIGINT'] = {
+        icons = {'military'},
+    },
+    ['Text Interception'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Foreign Media Translation'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['International Monitoring System'] = {
+        icons = {'weapons'},
+    },
+    ['State Department'] = {
+        icons = {'political', 'economic'},
+    },
+    ['Document and Media Exploitation'] = {
+        icons = {'political', 'military'},
+    },
+    ['Photogrammetry'] = {
+        icons = {'military', 'economic', 'weapons'},
+    },
+    ['RF Communication Mapping'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Trojan Horse'] = {
+        icons = {'political', 'military', 'weapons'},
+    },
+    ['Gray Literature'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    
+    ['Hazardous Material Surveys'] = {
+        icons = {'weapons'},
+    },
+    ['Recruit Local Sources'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Arms Control Inspectors'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Georeferenced Social Media'] = {
+        icons = {'political', 'economic'},
+    },
+    ['Commercial Multispectral Imagery'] = {
+        icons = {'political', 'military', 'economic'},
+    },
+    ['Telecom Coordination'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Internet'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['RADINT'] = {
+        icons = {'weapons'},
+    },
+    ['Interrogation'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Personnel Recovery Debriefing'] = {
+        icons = {'military', 'weapons'},
+    },
+    
+    ['Unsecured Networked Cameras'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Commercial Grayscale Imagery'] = {
+        icons = {'political', 'military', 'economic'},
+    },
+    ['Overhead COMINT'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['National Virtual Translation Center'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Analytic Outreach'] = {
+        icons = {'political', 'military', 'economic'},
+    },
+    ['Tactical Military HUMINT'] = {
+        icons = {'military'},
+    },
+    ['Foreign Material Exploitation'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Vibrometry'] = {
+        icons = {'military', 'economic', 'weapons'},
+    },
+    ['Defense Support Program'] = {
+        icons = {'military', 'weapons'},
+    },
+    ['Overhead ELINT'] = {
+        icons = {'military', 'weapons'},
+    },
+    
+    ['Wire Services'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Technical Journal Exploitation'] = {
+        icons = {'political', 'military', 'economic'},
+    },
+    ['Biometrics'] = {
+        icons = {'political', 'military', 'weapons'},
+    },
+    ['Standard Debriefing'] = {
+        icons = {'political', 'military'},
+    },
+    ['Black Bag Job'] = {
+        icons = {'political', 'military', 'economic', 'weapons'},
+    },
+    ['Handheld Imagery'] = {
+        icons = {'political', 'military', 'economic'},
+    }
+}
+
+function onLoad()
+    Global.setTable('techniqueCards', cards)
+    Global.setVar('techniqueDeck', self)
+end
