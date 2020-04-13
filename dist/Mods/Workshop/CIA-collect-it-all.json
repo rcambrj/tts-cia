@@ -3,13 +3,13 @@
   "GameMode": "CIA-collect-it-all",
   "Gravity": 1.0,
   "PlayArea": 1.0,
-  "Date": "4/13/2020 3:00:43 PM",
+  "Date": "4/13/2020 3:43:41 PM",
   "Table": "Table_RPG",
   "Sky": "Sky_Field",
   "Note": "",
   "Rules": "",
   "XmlUI": "<!-- Xml UI. See documentation: https://api.tabletopsimulator.com/ui/introUI/ -->",
-  "LuaScript": "--[[ Lua code. See documentation: https://api.tabletopsimulator.com/ --]]\n\n--[[ The onLoad event is called after the game save finishes loading. --]]\nfunction onLoad()\n    --[[ print('onLoad!') --]]\nend\n\n--[[ The onUpdate event is called once per frame. --]]\nfunction onUpdate()\n    --[[ print('onUpdate loop!') --]]\nend",
+  "LuaScript": "--[[ Lua code. See documentation: https://api.tabletopsimulator.com/ --]]\n\n--[[ The onLoad event is called after the game save finishes loading. --]]\nfunction onLoad()\n    print('hello world!')\nend\n\n--[[ The onUpdate event is called once per frame. --]]\nfunction onUpdate()\n    --[[ print('onUpdate loop!') --]]\nend",
   "LuaScriptState": "",
   "Grid": {
     "Type": 0,
@@ -70,12 +70,12 @@
         "Color": "Red",
         "Transform": {
           "posX": -15.1108065,
-          "posY": 4.81909943,
+          "posY": 4.82785654,
           "posZ": -20.1076221,
           "rotX": 0.0,
           "rotY": 0.0,
           "rotZ": 0.0,
-          "scaleX": 11.77265,
+          "scaleX": 11.7726574,
           "scaleY": 9.174497,
           "scaleZ": 4.87123871
         }
@@ -84,54 +84,54 @@
         "Color": "Yellow",
         "Transform": {
           "posX": -30.2150211,
-          "posY": 4.81909943,
+          "posY": 4.82785654,
           "posZ": 10.17524,
           "rotX": 0.0,
           "rotY": 90.0,
           "rotZ": 0.0,
-          "scaleX": 11.6599531,
+          "scaleX": 11.6599894,
           "scaleY": 9.174497,
-          "scaleZ": 4.922492
+          "scaleZ": 4.92251158
         }
       },
       {
         "Color": "Purple",
         "Transform": {
           "posX": 30.25128,
-          "posY": 4.81909943,
+          "posY": 4.82785654,
           "posZ": 9.59069252,
           "rotX": 0.0,
           "rotY": 270.0,
           "rotZ": 0.0,
-          "scaleX": 11.6599474,
+          "scaleX": 11.6599817,
           "scaleY": 9.174497,
-          "scaleZ": 4.922492
+          "scaleZ": 4.92251158
         }
       },
       {
         "Color": "Blue",
         "Transform": {
           "posX": 15.4749184,
-          "posY": 4.81909943,
+          "posY": 4.82785654,
           "posZ": 19.8365288,
           "rotX": 0.0,
           "rotY": 179.8,
           "rotZ": 0.0,
-          "scaleX": 11.77709,
+          "scaleX": 11.7771292,
           "scaleY": 9.174497,
-          "scaleZ": 4.87399244
+          "scaleZ": 4.874015
         }
       },
       {
         "Color": "White",
         "Transform": {
           "posX": 15.1961479,
-          "posY": 4.81909943,
+          "posY": 4.82785654,
           "posZ": -20.1400986,
           "rotX": 0.0,
           "rotY": 0.0,
           "rotZ": 0.0,
-          "scaleX": 11.7726326,
+          "scaleX": 11.77264,
           "scaleY": 9.17449951,
           "scaleZ": 4.87123871
         }
@@ -140,12 +140,12 @@
         "Color": "Green",
         "Transform": {
           "posX": -15.1927767,
-          "posY": 4.81909943,
+          "posY": 4.82785654,
           "posZ": 19.787817,
           "rotX": 0.0,
           "rotY": 180.0,
           "rotZ": 0.0,
-          "scaleX": 11.7726326,
+          "scaleX": 11.77264,
           "scaleY": 9.174497,
           "scaleZ": 4.87123871
         }
@@ -154,28 +154,28 @@
         "Color": "Pink",
         "Transform": {
           "posX": 30.10358,
-          "posY": 4.81909943,
+          "posY": 4.82785654,
           "posZ": -8.449126,
           "rotX": 0.0,
           "rotY": 270.0,
           "rotZ": 0.0,
-          "scaleX": 11.6599436,
+          "scaleX": 11.6599779,
           "scaleY": 9.174497,
-          "scaleZ": 4.922492
+          "scaleZ": 4.92251158
         }
       },
       {
         "Color": "Orange",
         "Transform": {
           "posX": -30.247818,
-          "posY": 4.81909943,
+          "posY": 4.82785654,
           "posZ": -8.822588,
           "rotX": 0.0,
           "rotY": 90.0,
           "rotZ": 0.0,
-          "scaleX": 11.6599569,
+          "scaleX": 11.6599932,
           "scaleY": 9.174497,
-          "scaleZ": 4.922492
+          "scaleZ": 4.92251158
         }
       }
     ]
@@ -196,7 +196,7 @@
         "posX": -3.52499986,
         "posY": 1.22832608,
         "posZ": 15.75,
-        "rotX": 1.03472125E-07,
+        "rotX": 1.57172948E-07,
         "rotY": 180.0,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2081,9 +2081,9 @@
       "Name": "DeckCustom",
       "Transform": {
         "posX": -26.0633335,
-        "posY": 1.3349148,
+        "posY": 1.33491492,
         "posZ": 15.9994068,
-        "rotX": -4.59050085E-07,
+        "rotX": 1.56399864E-07,
         "rotY": 180.0,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -4818,7 +4818,7 @@
         "posX": -21.99999,
         "posY": 1.21233773,
         "posZ": 16.0000134,
-        "rotX": 4.20575816E-07,
+        "rotX": -2.60814659E-08,
         "rotY": 180.0,
         "rotZ": 180.0,
         "scaleX": 1.0,
