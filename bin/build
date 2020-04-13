@@ -1,9 +1,274 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-set -euxo pipefail
+const util = require('util');
+const path = require('path');
+const fs = require('fs').promises;
+const childProcess = require('child_process');
+const { Console } = require('console');
 
-pushd ./dist
-zip -r0 ../CIA-Mod Mods
-popd
+const GLOBAL_LUA_FILE = 'Global.-1.ttslua';
 
-mv CIA-mod.zip CIA-mod.ttsmod
+const logger = new Console({
+  stdout: process.stdout,
+  stderr: process.stderr,
+  inspectOptions: { colors: true },
+});
+
+const defaultValue = (value, defaultValue) =>
+  (typeof value === 'boolean' ? true : value) ? value : defaultValue;
+
+const projectDir = (...args) => path.resolve(__dirname, '..', ...args);
+
+const fileExists = async (path) => {
+  try {
+    await fs.stat(path);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+const run = (command, args, options = {}) =>
+  new Promise((done, fail) => {
+    const process = childProcess.spawn(command, args, options);
+    let stdout = '',
+      stderr = '';
+
+    process.on('error', (error) => {
+      fail({ stdout, stderr, error });
+    });
+
+    process.stdout.on('data', (data) => {
+      stdout += data;
+    });
+
+    process.stderr.on('data', (data) => {
+      stderr += data;
+    });
+
+    process.on('exit', (code) => {
+      if (code != 0) {
+        fail({ stdout, stderr, error: null });
+        return;
+      }
+
+      done({ stdout, stderr });
+    });
+  });
+
+const zip = async ({ cwd, output, files, recursive = true }) => {
+  const args = [];
+
+  if (recursive) args.push('-r');
+
+  const { name: outputArg } = path.parse(output);
+  const outputZipFile = path.format({ name: outputArg, ext: '.zip' });
+  args.push(outputArg);
+
+  files.forEach((file) => args.push(file));
+
+  const zipResult = await run('zip', args, { cwd });
+
+  return {
+    ...zipResult,
+    output: outputZipFile,
+  };
+};
+
+const unzip = async ({ input, output, overwrite = true }) => {
+  const args = [];
+
+  if (overwrite) {
+    args.push('-o');
+  } else {
+    args.push('-n');
+  }
+
+  args.push(input);
+
+  args.push('-d');
+  args.push(output);
+
+  return run('unzip', args);
+};
+
+const join = async () => {
+  const jsonPath = projectDir('dist/Mods/Workshop/CIA-collect-it-all.json');
+  const configBuffer = await fs.readFile(jsonPath);
+  const config = JSON.parse(configBuffer.toString('utf8'));
+
+  const srcDir = (...args) => projectDir('src', ...args);
+  const srcFiles = await fs.readdir(srcDir());
+
+  const globalScriptPath = srcDir(GLOBAL_LUA_FILE);
+  if (await fileExists(globalScriptPath)) {
+    const content = (await fs.readFile(globalScriptPath)).toString('utf8');
+    config.LuaScript = content;
+    logger.info(`Updating global LuaScript with script: '${GLOBAL_LUA_FILE}'`);
+  } else {
+    logger.warn('Global script not be found.');
+  }
+
+  const objectSrcFiles = srcFiles.filter(
+    (f) => path.extname(f) === '.ttslua' && f !== GLOBAL_LUA_FILE
+  );
+
+  await Promise.all(
+    objectSrcFiles.map(async (filename) => {
+      const filePath = srcDir(filename);
+      const stats = await fs.stat(filePath);
+      if (stats.isDirectory()) {
+        return;
+      }
+
+      const [nickname, guid] = filename.split('.');
+      const contentBuffer = await fs.readFile(filePath);
+      const content = contentBuffer.toString('utf8');
+
+      const objectIndex = config.ObjectStates.findIndex(
+        ({ GUID }) => GUID === guid
+      );
+      if (objectIndex === -1) {
+        logger.warn(
+          `Cannot find \`ObjectStates\` entry for file: '${filename}'`
+        );
+        return;
+      }
+      config.ObjectStates[objectIndex].LuaScript = content;
+
+      logger.info(
+        `Updating '${nickname}' (${guid}) with script: '${filename}'`
+      );
+    })
+  );
+
+  const configJSON = JSON.stringify(config, null, 4);
+  await fs.writeFile(jsonPath, configJSON, 'utf8');
+};
+
+const split = async (jsonPath) => {
+  const configBuffer = await fs.readFile(jsonPath);
+  const config = JSON.parse(configBuffer.toString('utf8'));
+
+  const srcDir = (...args) => projectDir('src', ...args);
+
+  if (config.LuaScript) {
+    await fs.writeFile(srcDir(GLOBAL_LUA_FILE), config.LuaScript);
+    logger.info(`Unpacked global lua script to: '${GLOBAL_LUA_FILE}'`);
+  }
+
+  const scriptedObjects = config.ObjectStates.filter(
+    ({ LuaScript }) => LuaScript
+  );
+
+  await Promise.all(
+    scriptedObjects.map(async ({ LuaScript, Name, Nickname, GUID }) => {
+      if (!LuaScript) return;
+
+      const name = defaultValue(Nickname, Name);
+      const filename = [name, GUID, 'ttslua'].join('.');
+      await fs.writeFile(srcDir(filename), LuaScript);
+      logger.info(`Unpacked '${name}' (${GUID}) to: '${filename}'`);
+    })
+  );
+
+  if (config.LuaScript || scriptedObjects.length) {
+    logger.info(`Removing LuaScript entries from '${jsonPath}'`);
+    config.LuaScript = '';
+    config.ObjectStates = config.ObjectStates.map((entry) => ({
+      ...entry,
+      LuaScript: '',
+    }));
+    const configJSON = JSON.stringify(config, null, 4);
+    await fs.writeFile(jsonPath, configJSON);
+    logger.info('Successfully removed LuaScript entries');
+  } else {
+    logger.warn('No LuaScript entries found to extract');
+  }
+};
+
+const pack = async (output) => {
+  logger.group('Pack');
+  logger.group('Scripts');
+  logger.info('Adding .ttslua scripts to JSON...');
+  await join();
+  logger.info('Successfully updated JSON');
+  logger.groupEnd();
+
+  logger.group('Archive');
+  logger.info('Archiving files...');
+  const { output: outputZipPath, stdout: zipStdout } = await zip({
+    cwd: projectDir('dist'),
+    output,
+    files: ['Mods'],
+    recursive: true,
+  });
+  logger.info(zipStdout);
+  logger.info('Archive completed successfully');
+  logger.groupEnd();
+
+  logger.group('TTSMod');
+  logger.info('Writing .ttsmod file...');
+  await fs.rename(projectDir('dist', outputZipPath), output);
+  logger.info(`Successfully written .ttsmod file: '${output}'`);
+  logger.groupEnd();
+
+  logger.groupEnd();
+  logger.info(`Mod is now available at: '${output}'`);
+};
+
+const unpack = async (input) => {
+  logger.group('Unpack');
+  logger.group(`Attempting to unpack '${input}'...`);
+  const unzipOutputDir = projectDir('dist');
+  const { stdout: zipStdout } = await unzip({ input, output: unzipOutputDir });
+  logger.info(zipStdout);
+  logger.info(`Unpacked successfully to '${unzipOutputDir}`);
+  logger.groupEnd();
+
+  logger.group('Scripts');
+  logger.info('Extracting .ttslua files from JSON...');
+  await split(projectDir('dist/Mods/Workshop/CIA-collect-it-all.json'));
+  logger.info('Extraction completed successfully');
+  logger.groupEnd();
+};
+
+const unknownCommand = (command) => {
+  logger.error(
+    `Unknown command: '${command}', try 'pack' or 'unpack' instead.`
+  );
+  process.exit(2);
+};
+
+const noCommandSpecified = () => {
+  logger.error(
+    'No command specified. Did you mean something like: `./bin/build pack`?'
+  );
+  process.exit(1);
+};
+
+const main = async () => {
+  const DEFAULT_MOD_FILE_NAME = 'CIA-mod.ttsmod';
+  const ttsModFileName = path.resolve(
+    defaultValue(process.argv[3], DEFAULT_MOD_FILE_NAME)
+  );
+  const ttsModFilePath = projectDir(ttsModFileName);
+
+  const command = process.argv[2];
+  switch (command) {
+    case 'pack':
+      return await pack(ttsModFilePath);
+    case 'unpack':
+      return await unpack(ttsModFilePath);
+    case undefined:
+      return noCommandSpecified();
+    default:
+      return unknownCommand(command);
+  }
+};
+main().catch((err) => {
+  logger.error('Encountered a fatal error:');
+  logger.group();
+  logger.error(err);
+  logger.groupEnd();
+});
