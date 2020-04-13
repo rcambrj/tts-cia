@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+pushd ./dist
+zip -r0 ../CIA-Mod Mods
+popd
+
+mv CIA-mod.zip CIA-mod.ttsmod
