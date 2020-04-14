@@ -1,11 +1,16 @@
 --[[ Lua code. See documentation: https://api.tabletopsimulator.com/ --]]
 
+handSize = 7
+
 crisisDeck = nil
 crisisCards = nil
 techniqueDeck = nil 
 techniqueCards = nil
 realityCheckDeck = nil
 collectionDeckTrigger = nil
+
+-- globals for convenience
+collectionDeck = nil
 
 CRISIS_ASPECTS = {
     MILITARY = {
@@ -46,6 +51,7 @@ end
 
 function start()
     broadcastToAll('Starting game...')
+    -- TODO check player count between 2 and 5
     UI.hide("startButton")
 
     local position = collectionDeckTrigger.getPosition()
@@ -55,7 +61,18 @@ function start()
     local realityCheckDeckClone = realityCheckDeck.clone({
         position = position
     })
+    Wait.condition(
+        function()
+            collectionDeck = collectionDeckTrigger.getObjects()[1]
+            collectionDeck.setName('Collection Deck')
+            start1()
 
-    local collectionDeck = collectionDeckTrigger.getObjects()
-    log(#collectionDeck)
+        end,
+        || #collectionDeckTrigger.getObjects() == 1
+    )
+end
+
+function start1()
+    collectionDeck.shuffle()
+    collectionDeck.deal(handSize)
 end

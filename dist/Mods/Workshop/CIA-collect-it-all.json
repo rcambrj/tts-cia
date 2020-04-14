@@ -3,7 +3,7 @@
   "GameMode": "CIA-collect-it-all",
   "Gravity": 1,
   "PlayArea": 1,
-  "Date": "4/13/2020 9:39:46 PM",
+  "Date": "4/14/2020 10:08:52 PM",
   "Table": "Table_RPG",
   "Sky": "Sky_Field",
   "Note": "",
@@ -11,6 +11,18 @@
   "XmlUI": "<!-- Xml UI. See documentation: https://api.tabletopsimulator.com/ui/introUI/ -->\r\n\r\n<Button id=\"startButton\" onClick=\"start\" height=\"50\" width=\"200\"\r\n  fontSize=\"32\" fontStyle=\"Bold\"\r\n  tooltip=\"Start the game\" tooltipPosition=\"Below\"\r\n  rectAlignment=\"BottomCenter\" offsetXY=\"0 -100\"\r\n  colors=\"#FFFFFF|#41ca00\" visibility=\"Red|Orange|Yellow|Green|Blue|Purple|Pink|White\">START</Button>",
   "LuaScript": "",
   "LuaScriptState": "",
+  "MusicPlayer": {
+    "RepeatSong": true,
+    "PlaylistEntry": -1,
+    "CurrentAudioTitle": "Ultramarines Chant",
+    "CurrentAudioURL": "http://cloud-3.steamusercontent.com/ugc/773976977327440295/17C1CAA1F70F178395E93C05E55946061E695598/",
+    "AudioLibrary": [
+      {
+        "Item1": "http://cloud-3.steamusercontent.com/ugc/773976977327440295/17C1CAA1F70F178395E93C05E55946061E695598/",
+        "Item2": "Ultramarines Chant"
+      }
+    ]
+  },
   "Grid": {
     "Type": 0,
     "Lines": true,
@@ -70,12 +82,12 @@
         "Color": "Red",
         "Transform": {
           "posX": -15.1108065,
-          "posY": 4.96797037,
+          "posY": 5.002999,
           "posZ": -20.1076221,
           "rotX": 0,
           "rotY": 0,
           "rotZ": 0,
-          "scaleX": 11.7728386,
+          "scaleX": 11.7728653,
           "scaleY": 9.174497,
           "scaleZ": 4.87123871
         }
@@ -84,54 +96,54 @@
         "Color": "Yellow",
         "Transform": {
           "posX": -30.2150211,
-          "posY": 4.96797037,
+          "posY": 5.002999,
           "posZ": 10.17524,
           "rotX": 0,
           "rotY": 90,
           "rotZ": 0,
-          "scaleX": 11.6612244,
+          "scaleX": 11.6613932,
           "scaleY": 9.174497,
-          "scaleZ": 4.92320728
+          "scaleZ": 4.923302
         }
       },
       {
         "Color": "Purple",
         "Transform": {
           "posX": 30.25128,
-          "posY": 4.96797037,
+          "posY": 5.002999,
           "posZ": 9.59069252,
           "rotX": 0,
           "rotY": 270,
           "rotZ": 0,
-          "scaleX": 11.6612167,
+          "scaleX": 11.6613865,
           "scaleY": 9.174497,
-          "scaleZ": 4.92320728
+          "scaleZ": 4.923302
         }
       },
       {
         "Color": "Blue",
         "Transform": {
           "posX": 15.4749184,
-          "posY": 4.96797037,
+          "posY": 5.002999,
           "posZ": 19.8365288,
           "rotX": 0,
           "rotY": 179.8,
           "rotZ": 0,
-          "scaleX": 11.7785282,
+          "scaleX": 11.778718,
           "scaleY": 9.174497,
-          "scaleZ": 4.87479544
+          "scaleZ": 4.874902
         }
       },
       {
         "Color": "White",
         "Transform": {
           "posX": 15.1961479,
-          "posY": 4.96797037,
+          "posY": 5.002999,
           "posZ": -20.1400986,
           "rotX": 0,
           "rotY": 0,
           "rotZ": 0,
-          "scaleX": 11.77282,
+          "scaleX": 11.7728529,
           "scaleY": 9.17449951,
           "scaleZ": 4.87123871
         }
@@ -140,12 +152,12 @@
         "Color": "Green",
         "Transform": {
           "posX": -15.1927767,
-          "posY": 4.96797037,
+          "posY": 5.002999,
           "posZ": 19.787817,
           "rotX": 0,
           "rotY": 180,
           "rotZ": 0,
-          "scaleX": 11.77282,
+          "scaleX": 11.7728529,
           "scaleY": 9.174497,
           "scaleZ": 4.87123871
         }
@@ -154,28 +166,28 @@
         "Color": "Pink",
         "Transform": {
           "posX": 30.10358,
-          "posY": 4.96797037,
+          "posY": 5.002999,
           "posZ": -8.449126,
           "rotX": 0,
           "rotY": 270,
           "rotZ": 0,
-          "scaleX": 11.6612139,
+          "scaleX": 11.6613827,
           "scaleY": 9.174497,
-          "scaleZ": 4.92320728
+          "scaleZ": 4.923302
         }
       },
       {
         "Color": "Orange",
         "Transform": {
           "posX": -30.247818,
-          "posY": 4.96797037,
+          "posY": 5.002999,
           "posZ": -8.822588,
           "rotX": 0,
           "rotY": 90,
           "rotZ": 0,
-          "scaleX": 11.6612282,
+          "scaleX": 11.661397,
           "scaleY": 9.174497,
-          "scaleZ": 4.92320728
+          "scaleZ": 4.923302
         }
       }
     ]
@@ -239,7 +251,7 @@
         "posX": -3.52499986,
         "posY": 1.22832608,
         "posZ": 15.75,
-        "rotX": -1.15793078e-7,
+        "rotX": 1.3835467e-8,
         "rotY": 180,
         "rotZ": 180,
         "scaleX": 1,
@@ -2176,7 +2188,7 @@
         "posX": -27.025,
         "posY": 1.33491492,
         "posZ": 15.75,
-        "rotX": 1.34051334e-7,
+        "rotX": -4.64152947e-8,
         "rotY": 180,
         "rotZ": 180,
         "scaleX": 1,
@@ -4933,7 +4945,7 @@
         "posX": -24.675,
         "posY": 1.21233773,
         "posZ": 15.75,
-        "rotX": -1.14827252e-7,
+        "rotX": 1.657816e-8,
         "rotY": 180,
         "rotZ": 180,
         "scaleX": 1,
@@ -6753,14 +6765,14 @@
       "Name": "ScriptingTrigger",
       "Transform": {
         "posX": 1.199966,
-        "posY": 3.51113486,
+        "posY": 1,
         "posZ": 15.704114,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.68523693,
-        "scaleY": 5.1,
-        "scaleZ": 2.23942
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
       "Nickname": "",
       "Description": "",
