@@ -8,7 +8,7 @@
   "Sky": "Sky_Field",
   "Note": "",
   "Rules": "",
-  "XmlUI": "<!-- Xml UI. See documentation: https://api.tabletopsimulator.com/ui/introUI/ -->\r\n\r\n<Button id=\"startButton\" onClick=\"setup\" height=\"50\" width=\"200\"\r\n  fontSize=\"32\" fontStyle=\"Bold\"\r\n  tooltip=\"Start the game\" tooltipPosition=\"Below\"\r\n  rectAlignment=\"BottomCenter\" offsetXY=\"0 -100\"\r\n  colors=\"#FFFFFF|#41ca00\" visibility=\"Red|Orange|Yellow|Green|Blue|Purple|Pink|White\">START</Button>",
+  "XmlUI": "<!-- Xml UI. See documentation: https://api.tabletopsimulator.com/ui/introUI/ -->\r\n\r\n<Button id=\"startButton\" onClick=\"start\" height=\"50\" width=\"200\"\r\n  fontSize=\"32\" fontStyle=\"Bold\"\r\n  tooltip=\"Start the game\" tooltipPosition=\"Below\"\r\n  rectAlignment=\"BottomCenter\" offsetXY=\"0 -100\"\r\n  colors=\"#FFFFFF|#41ca00\" visibility=\"Red|Orange|Yellow|Green|Blue|Purple|Pink|White\">START</Button>",
   "LuaScript": "",
   "LuaScriptState": "",
   "Grid": {

@@ -7,7 +7,6 @@ techniqueCards = nil
 realityCheckDeck = nil
 collectionDeckTrigger = nil
 
-
 CRISIS_ASPECTS = {
     MILITARY = {
         name = "Military",
@@ -45,17 +44,18 @@ function onUpdate()
     --[[ print('onUpdate loop!') --]]
 end
 
-function setup()
-    broadcastToAll('Starting setup...')
+function start()
+    broadcastToAll('Starting game...')
+    UI.hide("startButton")
 
     local position = collectionDeckTrigger.getPosition()
-    -- log(position)
-    local techniqueDeckClone = techniqueDeck.clone(position)
-    -- local realityCheckDeckClone = realityCheckDeck.clone(position, true)
+    local techniqueDeckClone = techniqueDeck.clone({
+        position = position
+    })
+    local realityCheckDeckClone = realityCheckDeck.clone({
+        position = position
+    })
 
-    -- techniqueDeckClone.setPositionSmooth()
-    -- realityCheckDeckClone.setPositionSmooth(collectionDeckTrigger.getPosition())
-
-    -- local collectionDeck = collectionDeckTrigger.getObjects()
-    -- print(collectionDeck[1])
+    local collectionDeck = collectionDeckTrigger.getObjects()
+    log(#collectionDeck)
 end
