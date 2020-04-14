@@ -257,7 +257,7 @@ const noCommandSpecified = () => {
 };
 
 const main = async () => {
-  const DEFAULT_MOD_FILE_NAME = 'CIA-mod.ttsmod';
+  const DEFAULT_MOD_FILE_NAME = 'dist/CIA-collect-it-all.ttsmod';
   const ttsModFileName = path.resolve(
     defaultValue(process.argv[3], DEFAULT_MOD_FILE_NAME)
   );
