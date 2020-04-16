@@ -1,6 +1,16 @@
 --[[ Lua code. See documentation: https://api.tabletopsimulator.com/ --]]
 
-handSize = 7
+config = {
+    handSize = 7,
+    minPlayers = 2,
+    maxPlayers = 5,
+    crisisCardsRowSize = {
+        ['2'] = 5,
+        ['3'] = 10,
+        ['4'] = 10,
+        ['5'] = 10,
+    },
+}
 
 crisisDeck = nil
 crisisCards = nil
@@ -33,7 +43,7 @@ CRISIS_ASPECTS = {
 
 --[[ The onLoad event is called after the game save finishes loading. --]]
 function onLoad()
-    broadcastToAll('Loading...')
+    broadcastToAll('Waiting for assets...')
     Wait.condition(
         || broadcastToAll('Ready!'),
         || 
@@ -50,10 +60,24 @@ function onUpdate()
 end
 
 function start()
-    broadcastToAll('Starting game...')
-    -- TODO check player count between 2 and 5
-    UI.hide("startButton")
+    -- if not (config.minPlayers <= #getSeatedPlayers() and #getSeatedPlayers() <= config.maxPlayers) then
+    --     broadcastToAll('This game plays 2-5 players :(')
+    --     return
+    -- end
 
+    broadcastToAll('Starting game...')
+    UI.hide("startButton")
+ 
+    combineCollectionDeck(function() 
+        collectionDeck.shuffle()
+        crisisDeck.shuffle()
+        dealCollectionCards()
+        fillCrisisCardsRow()
+        broadcastToAll('Game started!')
+    end)
+end
+
+function combineCollectionDeck(callback) 
     local position = collectionDeckTrigger.getPosition()
     local techniqueDeckClone = techniqueDeck.clone({
         position = position
@@ -61,18 +85,31 @@ function start()
     local realityCheckDeckClone = realityCheckDeck.clone({
         position = position
     })
+    
     Wait.condition(
         function()
             collectionDeck = collectionDeckTrigger.getObjects()[1]
             collectionDeck.setName('Collection Deck')
-            start1()
-
+            if callback ~= nil then
+                callback()
+            end
         end,
         || #collectionDeckTrigger.getObjects() == 1
     )
 end
 
-function start1()
-    collectionDeck.shuffle()
-    collectionDeck.deal(handSize)
+function dealCollectionCards()
+    local players = getSeatedPlayers()
+
+    for _, playerColor in pairs(players) do
+        local player = Player[playerColor]
+        local hand = player.getHandObjects()[1]
+        local handSize = hand ~= nil and #hand.getObjects() or 0
+        local handNeeds = config.handSize - handSize
+        collectionDeck.deal(handNeeds, playerColor)
+    end
+end
+
+function fillCrisisCardsRow()
+    -- TODO
 end
