@@ -1,0 +1,4 @@
+
+function onLoad()
+    Global.setVar('collectionDeckTrigger', self)
+end

@@ -19,6 +19,19 @@ techniqueCards = nil
 realityCheckDeck = nil
 collectionDeckTrigger = nil
 
+crisisTrigger1 = nil
+crisisTrigger2 = nil
+crisisTrigger3 = nil
+crisisTrigger4 = nil
+crisisTrigger5 = nil
+crisisTrigger6 = nil
+crisisTrigger7 = nil
+crisisTrigger8 = nil
+crisisTrigger9 = nil
+crisisTrigger10 = nil
+
+crisisTriggers = {}
+
 -- globals for convenience
 collectionDeck = nil
 
@@ -45,12 +58,48 @@ CRISIS_ASPECTS = {
 function onLoad()
     broadcastToAll('Waiting for assets...')
     Wait.condition(
-        || broadcastToAll('Ready!'),
-        || 
-            crisisDeck ~= nil and
-            techniqueDeck ~= nil and
-            realityCheckDeck ~= nil and
-            collectionDeckTrigger ~= nil
+        || broadcastToAll('Ready'),
+		function()
+			local refs = {
+				crisisDeck,
+				techniqueDeck,
+				realityCheckDeck,
+				collectionDeckTrigger,
+				crisisTrigger1,
+				crisisTrigger2,
+				crisisTrigger3,
+				crisisTrigger4,
+				crisisTrigger5,
+				crisisTrigger6,
+				crisisTrigger7,
+				crisisTrigger8,
+				crisisTrigger9,
+				crisisTrigger10,
+			}
+			local ready = true;
+
+			for _, ref in pairs(refs) do
+				if ref == nil then
+					ready = false
+				end
+			end
+
+			crisisTriggers = {
+				crisisTrigger1,
+				crisisTrigger2,
+				crisisTrigger3,
+				crisisTrigger4,
+				crisisTrigger5,
+				crisisTrigger6,
+				crisisTrigger7,
+				crisisTrigger8,
+				crisisTrigger9,
+				crisisTrigger10
+			}
+
+			log(refs)
+			return ready
+		end
     )
 end
 
@@ -68,12 +117,12 @@ function start()
     broadcastToAll('Starting game...')
     UI.hide("startButton")
  
-    combineCollectionDeck(function() 
+    combineCollectionDeck(function()
         collectionDeck.shuffle()
         crisisDeck.shuffle()
         dealCollectionCards()
         fillCrisisCardsRow()
-        broadcastToAll('Game started!')
+        broadcastToAll('Game started')
     end)
 end
 
@@ -111,5 +160,10 @@ function dealCollectionCards()
 end
 
 function fillCrisisCardsRow()
-    -- TODO
+	for _, crisisTrigger in pairs(crisisTriggers) do
+		crisisDeck.takeObject({
+			flip = true,
+			position = crisisTrigger.getPosition()
+		})
+	end
 end

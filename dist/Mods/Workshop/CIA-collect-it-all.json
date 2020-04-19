@@ -3,8 +3,9 @@
   "GameMode": "CIA-collect-it-all",
   "Gravity": 1,
   "PlayArea": 1,
-  "Date": "4/16/2020 7:56:41 PM",
-  "Table": "Table_RPG",
+  "Date": "4/19/2020 10:49:42 PM",
+  "Table": "Table_Custom",
+  "TableURL": "http://www.pixeden.com/media/k2/galleries/220/004-wood-melamine-subttle-pattern-background-pat.jpg",
   "Sky": "Sky_Field",
   "Note": "",
   "Rules": "",
@@ -13,7 +14,7 @@
   "LuaScriptState": "",
   "Grid": {
     "Type": 0,
-    "Lines": true,
+    "Lines": false,
     "Color": {
       "r": 0,
       "g": 0,
@@ -22,7 +23,7 @@
     "Opacity": 0.265086323,
     "ThickLines": false,
     "Snapping": false,
-    "Offset": true,
+    "Offset": false,
     "BothSnapping": false,
     "xSize": 2.35,
     "ySize": 3.5,
@@ -69,71 +70,71 @@
       {
         "Color": "Blue",
         "Transform": {
-          "posX": -30.247818,
-          "posY": 5.07305574,
-          "posZ": -8.822588,
+          "posX": -45,
+          "posY": 3.12890673,
+          "posZ": -34.42515,
           "rotX": 0,
-          "rotY": 90,
+          "rotY": 0,
           "rotZ": 0,
-          "scaleX": 11.6622686,
-          "scaleY": 9.174497,
-          "scaleZ": 4.92379141
+          "scaleX": 15.3268948,
+          "scaleY": 11.8970528,
+          "scaleZ": 6.35014534
         }
       },
       {
         "Color": "Yellow",
         "Transform": {
-          "posX": -18,
-          "posY": 5.07305574,
-          "posZ": -20.1076221,
+          "posX": -20,
+          "posY": 3.12890673,
+          "posZ": -34.42515,
           "rotX": 0,
           "rotY": 0,
           "rotZ": 0,
-          "scaleX": 11.77299,
-          "scaleY": 9.174497,
-          "scaleZ": 4.87123871
+          "scaleX": 15.3268948,
+          "scaleY": 11.8970528,
+          "scaleZ": 6.35014534
         }
       },
       {
         "Color": "White",
         "Transform": {
           "posX": 0,
-          "posY": 5.07305574,
-          "posZ": -20.1076221,
+          "posY": 3.12890673,
+          "posZ": -34.42515,
           "rotX": 0,
           "rotY": 0,
           "rotZ": 0,
-          "scaleX": 11.77299,
-          "scaleY": 9.174497,
-          "scaleZ": 4.87123871
+          "scaleX": 15.3268919,
+          "scaleY": 11.8970528,
+          "scaleZ": 6.35014534
         }
       },
       {
         "Color": "Green",
         "Transform": {
-          "posX": 18,
-          "posY": 5.07305574,
-          "posZ": -20.1400986,
+          "posX": 20,
+          "posY": 3.12890673,
+          "posZ": -34.2558136,
           "rotX": 0,
           "rotY": 0,
           "rotZ": 0,
-          "scaleX": 11.77298,
-          "scaleY": 9.17449951,
-          "scaleZ": 4.87123871
+          "scaleX": 15.3268747,
+          "scaleY": 11.8970547,
+          "scaleZ": 6.705048
         }
       },
       {
         "Color": "Red",
         "Transform": {
-          "posX": 30.10358,
-          "posY": 5.07305574,
-          "posZ": -8.449126,
+          "posX": 45,
+          "posY": 3.12890673,
+          "posZ": -34.2558136,
           "rotX": 0,
-          "rotY": 270,
+          "rotY": 0,
           "rotZ": 0,
-          "scaleX": 11.6622534,
-          "scaleY": 9.174497,
-          "scaleZ": 4.92379141
+          "scaleX": 15.3268747,
+          "scaleY": 11.8970547,
+          "scaleZ": 6.705048
         }
       }
     ]
@@ -152,15 +153,15 @@
     {
       "Name": "Custom_PDF",
       "Transform": {
-        "posX": 5.87405825,
-        "posY": 0.960000336,
-        "posZ": 15.7475271,
-        "rotX": 6.54927348e-8,
+        "posX": -49.3255234,
+        "posY": 0.9652239,
+        "posZ": 23.0802612,
+        "rotX": 1.20034485e-7,
         "rotY": 179.992172,
-        "rotZ": 0.00000125739825,
-        "scaleX": 0.7497187,
+        "rotZ": -1.52138284e-7,
+        "scaleX": 2.3755517,
         "scaleY": 1,
-        "scaleZ": 0.7497187
+        "scaleZ": 2.3755517
       },
       "Nickname": "Rules",
       "Description": "",
@@ -171,7 +172,7 @@
         "b": 1
       },
       "Locked": true,
-      "Grid": true,
+      "Grid": false,
       "Snap": true,
       "IgnoreFoW": false,
       "Autoraise": true,
@@ -194,10 +195,10 @@
     {
       "Name": "DeckCustom",
       "Transform": {
-        "posX": -5.87499952,
-        "posY": 1.22832608,
-        "posZ": 15.75,
-        "rotX": 4.36615277e-9,
+        "posX": -41.125,
+        "posY": 1.22832584,
+        "posZ": 22.75,
+        "rotX": 1.26209173e-7,
         "rotY": 180,
         "rotZ": 180,
         "scaleX": 1,
@@ -2131,10 +2132,10 @@
     {
       "Name": "DeckCustom",
       "Transform": {
-        "posX": -27.025,
-        "posY": 1.33491492,
-        "posZ": 15.75,
-        "rotX": -2.46032982e-7,
+        "posX": -50.5249977,
+        "posY": 1.34013855,
+        "posZ": 33.25,
+        "rotX": -8.097931e-7,
         "rotY": 180,
         "rotZ": 180,
         "scaleX": 1,
@@ -4888,10 +4889,10 @@
     {
       "Name": "DeckCustom",
       "Transform": {
-        "posX": -24.675,
-        "posY": 1.21233773,
-        "posZ": 15.75,
-        "rotX": 9.560256e-9,
+        "posX": -48.1870461,
+        "posY": 1.21756113,
+        "posZ": 33.2455025,
+        "rotX": -1.08421176e-7,
         "rotY": 180,
         "rotZ": 180,
         "scaleX": 1,
@@ -6710,9 +6711,9 @@
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 1.199966,
-        "posY": 1,
-        "posZ": 15.704114,
+        "posX": -36.5,
+        "posY": 0.965000331,
+        "posZ": 22.75,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
@@ -6720,7 +6721,7 @@
         "scaleY": 10,
         "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Collection Deck Trigger",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -6747,15 +6748,15 @@
     {
       "Name": "BlockSquare",
       "Transform": {
-        "posX": -1.175,
-        "posY": 0.9649999,
-        "posZ": 15.75,
-        "rotX": 2.72443259e-7,
-        "rotY": -0.00000186917134,
-        "rotZ": 6.88271555e-8,
-        "scaleX": 2.2,
+        "posX": -31.67,
+        "posY": 1,
+        "posZ": 22.75,
+        "rotX": 0,
+        "rotY": 0,
+        "rotZ": 0,
+        "scaleX": 2.3,
         "scaleY": 0.01,
-        "scaleZ": 3.3
+        "scaleZ": 3.4
       },
       "Nickname": "Discard",
       "Description": "",
@@ -6779,22 +6780,80 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "ee39b2"
+      "GUID": "ee39b2",
+      "AttachedSnapPoints": [
+        {
+          "Position": {
+            "x": 0.0218608156,
+            "y": 0.499999583,
+            "z": 0.01638008
+          },
+          "Rotation": {
+            "x": -2.88975528e-8,
+            "y": 180,
+            "z": -4.814433e-7
+          }
+        }
+      ]
+    },
+    {
+      "Name": "FogOfWar",
+      "Transform": {
+        "posX": -49.35936,
+        "posY": 3.515223,
+        "posZ": 33.3246765,
+        "rotX": 0,
+        "rotY": 359.8334,
+        "rotZ": 0,
+        "scaleX": 5.578169,
+        "scaleY": 5.1,
+        "scaleZ": 4.024465
+      },
+      "Nickname": "Scripted setup tools",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "FogOfWar": {
+        "HideGmPointer": true,
+        "HideObjects": true,
+        "ReHideObjects": false,
+        "Height": 0,
+        "RevealedLocations": {}
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "75b4e0"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": -26.9328,
-        "posY": 3.51113486,
-        "posZ": 8.940437,
+        "posX": -30,
+        "posY": 0.965000331,
+        "posZ": 15,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.24724388,
-        "scaleY": 5.1,
-        "scaleZ": 1.64092255
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Crisis 1",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -6816,22 +6875,22 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "6d03be"
+      "GUID": "eb5dfe"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": -15.34003,
-        "posY": 3.51113486,
-        "posZ": 8.770158,
+        "posX": -15,
+        "posY": 0.965000331,
+        "posZ": 15,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.08247185,
-        "scaleY": 5.1,
-        "scaleZ": 1.7061367
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Crisis 2",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -6853,22 +6912,22 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "b49cab"
+      "GUID": "f367d3"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": -3.535051,
-        "posY": 3.51113486,
-        "posZ": 8.598792,
+        "posX": 0,
+        "posY": 0.965000331,
+        "posZ": 15,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.13786936,
-        "scaleY": 5.1,
-        "scaleZ": 1.498167
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Crisis 3",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -6890,22 +6949,22 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "b470ef"
+      "GUID": "2c0367"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 8.346081,
-        "posY": 3.51113486,
-        "posZ": 8.631461,
+        "posX": 15,
+        "posY": 0.965000331,
+        "posZ": 15,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.28858,
-        "scaleY": 5.1,
-        "scaleZ": 1.15812874
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Crisis 4",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -6927,22 +6986,22 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "0c1689"
+      "GUID": "b97783"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 20.0838737,
-        "posY": 3.51113486,
-        "posZ": 8.668988,
+        "posX": 30,
+        "posY": 0.965000331,
+        "posZ": 15,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.05799866,
-        "scaleY": 5.1,
-        "scaleZ": 1.90847588
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Crisis 5",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -6964,22 +7023,22 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "31d3dd"
+      "GUID": "d6c5b6"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": -26.830574,
-        "posY": 3.51113486,
-        "posZ": -5.29457,
+        "posX": -30,
+        "posY": 0.965000331,
+        "posZ": -7,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.59646034,
-        "scaleY": 5.1,
-        "scaleZ": 1.841219
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Crisis 6",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -7001,22 +7060,22 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "0c964e"
+      "GUID": "2d27a4"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": -15.2963123,
-        "posY": 3.51113486,
-        "posZ": -5.23752975,
+        "posX": -15,
+        "posY": 0.965000331,
+        "posZ": -7,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.61427689,
-        "scaleY": 5.1,
-        "scaleZ": 1.72713089
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Crisis 7",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -7038,22 +7097,22 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "c6d03d"
+      "GUID": "4b1fc8"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": -3.45358777,
-        "posY": 3.51113486,
-        "posZ": -5.40879154,
+        "posX": 0,
+        "posY": 0.965000331,
+        "posZ": -7,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.59439325,
-        "scaleY": 5.1,
-        "scaleZ": 1.95303535
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Crisis 8",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -7075,22 +7134,22 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "b0ffc1"
+      "GUID": "4dc0d0"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 8.216778,
-        "posY": 3.51113486,
-        "posZ": -5.351307,
+        "posX": 15,
+        "posY": 0.965000331,
+        "posZ": -7,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.234304,
-        "scaleY": 5.1,
-        "scaleZ": 1.954689
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Crisis 9",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -7112,22 +7171,22 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "ed5143"
+      "GUID": "fdd004"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 20.02229,
-        "posY": 3.51113486,
-        "posZ": -5.352088,
+        "posX": 30,
+        "posY": 0.965000331,
+        "posZ": -7,
         "rotX": 0,
         "rotY": 0,
         "rotZ": 0,
-        "scaleX": 1.15740013,
-        "scaleY": 5.1,
-        "scaleZ": 1.8396244
+        "scaleX": 1,
+        "scaleY": 10,
+        "scaleZ": 1
       },
-      "Nickname": "",
+      "Nickname": "Crisis 10",
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
@@ -7149,7 +7208,7 @@
       "XmlUI": "",
       "LuaScript": "",
       "LuaScriptState": "",
-      "GUID": "6e7622"
+      "GUID": "85c301"
     }
   ],
   "DecalPallet": [],
@@ -7164,127 +7223,6 @@
         "b": 0.5
       },
       "id": 0
-    },
-    "1": {
-      "title": "White",
-      "body": "",
-      "color": "White",
-      "visibleColor": {
-        "r": 1,
-        "g": 1,
-        "b": 1
-      },
-      "id": 1
-    },
-    "2": {
-      "title": "Brown",
-      "body": "",
-      "color": "Brown",
-      "visibleColor": {
-        "r": 0.443,
-        "g": 0.231,
-        "b": 0.09
-      },
-      "id": 2
-    },
-    "3": {
-      "title": "Red",
-      "body": "",
-      "color": "Red",
-      "visibleColor": {
-        "r": 0.856,
-        "g": 0.1,
-        "b": 0.094
-      },
-      "id": 3
-    },
-    "4": {
-      "title": "Orange",
-      "body": "",
-      "color": "Orange",
-      "visibleColor": {
-        "r": 0.956,
-        "g": 0.392,
-        "b": 0.113
-      },
-      "id": 4
-    },
-    "5": {
-      "title": "Yellow",
-      "body": "",
-      "color": "Yellow",
-      "visibleColor": {
-        "r": 0.905,
-        "g": 0.898,
-        "b": 0.172
-      },
-      "id": 5
-    },
-    "6": {
-      "title": "Green",
-      "body": "",
-      "color": "Green",
-      "visibleColor": {
-        "r": 0.192,
-        "g": 0.701,
-        "b": 0.168
-      },
-      "id": 6
-    },
-    "7": {
-      "title": "Blue",
-      "body": "",
-      "color": "Blue",
-      "visibleColor": {
-        "r": 0.118,
-        "g": 0.53,
-        "b": 1
-      },
-      "id": 7
-    },
-    "8": {
-      "title": "Teal",
-      "body": "",
-      "color": "Teal",
-      "visibleColor": {
-        "r": 0.129,
-        "g": 0.694,
-        "b": 0.607
-      },
-      "id": 8
-    },
-    "9": {
-      "title": "Purple",
-      "body": "",
-      "color": "Purple",
-      "visibleColor": {
-        "r": 0.627,
-        "g": 0.125,
-        "b": 0.941
-      },
-      "id": 9
-    },
-    "10": {
-      "title": "Pink",
-      "body": "",
-      "color": "Pink",
-      "visibleColor": {
-        "r": 0.96,
-        "g": 0.439,
-        "b": 0.807
-      },
-      "id": 10
-    },
-    "11": {
-      "title": "Black",
-      "body": "",
-      "color": "Black",
-      "visibleColor": {
-        "r": 0.25,
-        "g": 0.25,
-        "b": 0.25
-      },
-      "id": 11
     }
   },
   "VersionNumber": "v12.3.5"

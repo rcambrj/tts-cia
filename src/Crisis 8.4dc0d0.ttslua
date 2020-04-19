@@ -1,0 +1,4 @@
+
+function onLoad()
+    Global.setVar('crisisTrigger8', self)
+end
