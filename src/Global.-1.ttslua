@@ -5,10 +5,10 @@ config = {
     minPlayers = 2,
     maxPlayers = 5,
     crisisCardsRowSize = {
-        ['2'] = 5,
-        ['3'] = 10,
-        ['4'] = 10,
-        ['5'] = 10,
+        [2] = 5,
+        [3] = 10,
+        [4] = 10,
+        [5] = 10,
     },
 }
 
@@ -160,7 +160,8 @@ function dealCollectionCards()
 end
 
 function fillCrisisCardsRow()
-    local max = crisisCardsRowSize[#getSeatedPlayers()]
+    local players = getSeatedPlayers()
+    local max = config.crisisCardsRowSize[#players]
     for key, crisisTrigger in pairs(crisisTriggers) do
         if (key > max) then
             return
