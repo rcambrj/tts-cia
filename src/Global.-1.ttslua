@@ -109,10 +109,10 @@ function onUpdate()
 end
 
 function start()
-    -- if not (config.minPlayers <= #getSeatedPlayers() and #getSeatedPlayers() <= config.maxPlayers) then
-    --     broadcastToAll('This game plays 2-5 players :(')
-    --     return
-    -- end
+    if not (config.minPlayers <= #getSeatedPlayers() and #getSeatedPlayers() <= config.maxPlayers) then
+        broadcastToAll('This game plays 2-5 players :(')
+        return
+    end
 
     broadcastToAll('Starting game...')
     UI.hide("startButton")
@@ -160,10 +160,74 @@ function dealCollectionCards()
 end
 
 function fillCrisisCardsRow()
-	for _, crisisTrigger in pairs(crisisTriggers) do
+    local max = crisisCardsRowSize[#getSeatedPlayers()]
+    for key, crisisTrigger in pairs(crisisTriggers) do
+        if (key > max) then
+            return
+        end
+
 		crisisDeck.takeObject({
 			flip = true,
 			position = crisisTrigger.getPosition()
 		})
+	end
+end
+
+-- helper function to put zero or more cards into a location
+-- works when there is:
+-- * nothing in the destination
+-- * one card in the destination
+-- * a deck in the destination
+function putCards(items, destination, callback)
+	if (#items < 1) then
+		if callback ~= nil then
+			callback()
+		end
+		return
+	end
+	
+	local thingsInDestination = destination.getObjects()
+	if (#thingsInDestination < 1) then
+		local r = destination.getRotation()
+		r.z = 180 -- ensure decks are placed face-down
+		items[1].setRotation(r)
+		local position = destination.getPosition()
+		local positionAbove = {
+			position[1],
+			position[2] + 2,
+			position[3],
+		}
+		items[1].setPosition(positionAbove, false, true)
+		items[1].setPositionSmooth(positionAbove, false, true) -- fix stacking
+		Wait.condition(function()
+			if #items > 1 then
+				Wait.frames(|| putCards(slice(items, 2), destination, destination, callback), 1)
+			elseif callback ~= nil then
+				Wait.frames(|| callback(), 1)
+			end	
+		end, || not items[1].isSmoothMoving())
+	else
+		local target = nil
+		for _, thingInZone in pairs(thingsInDestination) do
+			if thingInZone.tag == "Deck" or thingInZone.tag == "Card" then
+				target = thingInZone
+			end
+		end
+
+		if target.tag == "Deck" then
+			for _, sourceItem in pairs(items) do
+				target.putObject(sourceItem)
+			end
+			if callback ~= nil then
+				Wait.frames(|| callback(), 1)
+			end
+		elseif target.tag == "Card" then
+			target.putObject(items[1])
+			if #items > 1 then
+				Wait.frames(|| putCards(slice(items, 2), destination, destination, callback), 1)				
+			elseif callback ~= nil then
+				Wait.frames(|| callback(), 1)
+			end
+		end
 	end
 end
